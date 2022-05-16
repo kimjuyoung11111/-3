@@ -1,0 +1,630 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.fix,
+.fix::before,
+.fix::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    color: #222;
+    background-color: #fdfaed;
+}
+
+#wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* header */
+
+header {
+    width: 100%;
+}
+
+header .main-top {
+    position: relative;
+}
+
+header .line {
+    display: flex;
+}
+
+header .line span {
+    width: 25%;
+    height: 7px;
+    display: block;
+}
+
+header .line span:nth-child(1) {
+    background-color: #e97b0c;
+}
+
+header .line span:nth-child(2) {
+    background-color: #e6cb62;
+}
+
+header .line span:nth-child(3) {
+    background-color: #77dd14;
+}
+
+header .line span:nth-child(4) {
+    background-color: #80c7e1;
+}
+
+header .line span:nth-child(5) {
+    background-color: #7bc9a3;
+}
+
+header .line span:nth-child(6) {
+    background-color: #bac1f4;
+}
+
+header .number {
+    display: block;
+    position: absolute;
+    top: 10;
+    right: 300px;
+}
+
+header .inner {
+    padding-top: 50px;
+    display: flex;
+}
+header .inner h1{margin-bottom: 10px;}
+header .manu .manu-btn {
+    display: none;
+    justify-content: space-between;
+}
+
+label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: 40px;
+    margin-right: 130px;
+    position: relative;
+    padding-left: 1060px;
+    box-sizing: border-box;
+}
+
+label span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #a6a19d;
+    position: absolute;
+
+}
+
+label span:nth-child(1) {
+    top: 0;
+}
+
+label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+label span:nth-child(3) {
+    bottom: 0;
+}
+
+/* 햄버거버튼 눌렀을 때, X표시 */
+/* header input:checked+label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+header input:checked+label span:nth-child(2) {
+    opacity: 0;
+}
+
+header input:checked+label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+} */
+
+
+/* 햄버거버튼(메뉴) */
+
+header .main-maun-page {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    background-color: #fdfaed;
+    transition: all 0.8s;
+    /* 갑자기 등장하는 것이 아닌 왼쪽에서 부드럽게 나타나게 함 */
+}
+
+header .main-maun-page.on {
+    left: 0;
+}
+
+/* .main-maun-page가 나오게 만드는 방법
+해당클래스에 가상클래스 on파트를 만들어줘서 왼쪽으로
+ 보냈던 것을 다시 화면에 띄울려면 제이쿼리에서 만든 가상클래스 
+ on을 보여주려면 추가클래스인 addClass를 선택,
+엑스를 누르면 사라지게 만들려면 removeClass를 선택해야한다 */
+
+header .main-maun-page .line-btn {
+    display: flex;
+    position: fixed;
+    width: 80%;
+    padding-left: 620px;
+
+}
+
+header .main-maun-page .btn-x {
+    padding-top: 25px;
+    position: absolute;
+    top: 80px;
+    right: 320px;
+}
+
+/* header .main-maun-page .btn-x-left{ top: 50%;
+    transform: translateY(-50%) rotate(45deg);}
+
+header .main-maun-page .btn-x-right{  bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);} */
+
+header .line-btn span {
+    width: 25%;
+    height: 7px;
+    display: block;
+
+}
+
+header .line-btn span:nth-child(1) {
+    background-color: #e97b0c;
+}
+
+header .line-btn span:nth-child(2) {
+    background-color: #e6cb62;
+}
+
+header .line-btn span:nth-child(3) {
+    background-color: #5e4f45;
+}
+
+header .line-btn span:nth-child(4) {
+    background-color: #80c7e1;
+}
+
+header .menu {
+    width: 100%;
+    margin-top: 200px;
+}
+
+.main-m-top {
+    display: flex;
+    padding-bottom: 100px;
+}
+
+.main-m-top li {
+    padding-left: 100px;
+}
+
+.main-m-top li>a {
+    font-size: 27pt;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.main-m-top li>a:hover {
+    color: #e97b0c;
+}
+
+.main-m-bot {
+    display: flex;
+}
+
+.main-m-bot .annot {
+    padding-left: 100px;
+}
+
+.main-m-bot .anot {
+    padding-left: 220px;
+}
+
+.main-m-bot .ant {
+    padding-left: 130px;
+}
+
+.main-m-bot li>a {
+    font-size: 27pt;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.main-m-bot li>a:hover {
+    color: #e97b0c;
+}
+
+header .sub-m {
+    margin-top: 30px;
+}
+
+header .sub-m a {
+    display: block;
+    font-size: 12pt;
+    padding: 10px 0;
+}
+
+header .sub-m a:hover {
+    color: #d97e08;
+}
+
+/* section01 */
+
+.section01 {
+    width: 100%;
+    height: 400px;
+}
+
+.section01 .set01-img {
+    display: block;
+}
+
+.section01 .set01-content {
+    border-bottom: 2px solid #7e7d79;
+    /* line-height: 50px; */
+}
+
+.section01 .set01-content .inner {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.section01 .back-icon {
+
+    /* border-right: 1px solid #7e7d79; */
+    border-top: none;
+    border-bottom: none;
+    padding-right: 30px;
+
+}
+
+.section01 .letter01 {
+    display: flex;
+    padding: 14px 25px;
+    background-color: #fcedad;
+}
+
+.section01 .letter01 p {
+    padding-right: 100px;
+
+}
+
+.section01 .letter02 {
+    z-index: 10;
+
+}
+
+.section01 .icon-img {
+    transform: translateY(3px);
+}
+
+.section01 .letter02 .let02-main-m {
+    padding: 14px 25px;
+}
+
+.section01 .sub-m {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 50px;
+    left: 0;
+
+}
+
+.section01 .sub-m a {
+    display: block;
+    width: 235px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fbf6e0;
+    padding: 4px 22px;
+}
+
+.section01 .sub-m a:hover {
+    /* background-color: #f9d94a; */
+    font-weight: bold;
+}
+
+.letter02 .let02-main-m {
+    position: relative;
+    background-color: #fbf6e0;
+}
+
+
+/* .section01 .letter02 {
+    z-index: 10;
+}
+
+.section01 .letter02 .let02-top {
+    display: flex;
+    align-items: center;
+    background-color: #dbddef;
+    padding: 30px;
+}
+
+.section01 .letter02 .let02-top p {
+    padding-right: 50px;
+}
+
+.let02-drop {
+    display: flex;
+    align-items: center;
+    background-color: #dbddef;
+    padding-left: 30px;
+    z-index: 100;
+}
+
+.let02-drop ul li {
+    padding: 20px 0;
+} */
+
+/* section02 */
+.section02 {
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+.set02-top {
+    text-align: center;
+    position: relative;
+
+}
+
+.set02-top .title-top {
+    margin-bottom: 20px;
+    padding-bottom: 7px;
+    margin-left: 40%;
+    font-weight: bold;
+    border-bottom: 1px solid #7e7d79;
+    width: 350px;
+}
+
+.set02-top h2 {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    margin-left: 40%;
+    font-size: 35px;
+    border-bottom: 1px solid #7e7d79;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+.set02-top .title-center {
+    padding-bottom: 30px;
+    font-weight: bold;
+}
+
+.set02-top .title-center span img {
+    position: absolute;
+    top: 57%;
+    left: 47%;
+    transform: translate(-57%, -47%);
+}
+
+.set02-top .title-bom {
+    margin-bottom: 70px;
+}
+
+.set02-bom {
+    width: 100%;
+    text-align: center;
+}
+
+.set02-bom .inner02 {
+    display: flex;
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.set02-bom-left {
+    margin-right: 65px;
+    width: 420px;
+    height: 580px;
+    background-color: #f5efef;
+}
+
+.set02-bom-center {
+    margin-right: 65px;
+    width: 420px;
+    height: 580px;
+    background-color: #f5efef;
+}
+
+.set02-bom-right {
+    margin-right: 65px;
+    width: 420px;
+    height: 580px;
+    background-color: #f5efef;
+}
+
+.inner02 h3 {
+    padding-top: 30px;
+}
+
+.inner02 .imgbox {
+    padding: 20px 0;
+}
+
+.inner02 p {
+    padding-bottom: 80px;
+}
+
+/* section03 */
+.section03 {
+    width: 100%;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.section03 .ss {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section03 span {
+    position: absolute;
+    top: 0;
+    left: 46%;
+    transform: translateX(-46%)
+}
+
+.section03 .cont {
+    display: flex;
+    background-color: #f5efef;
+}
+
+.section03 .cont img {
+    width: 50%;
+}
+
+.section03 .cont div {
+    width: 50%;
+    height: 400px;
+    padding-top: 50px;
+}
+
+.section03 .cont h3 {
+    text-align: center;
+    font-size: 28px;
+    color: #e07761;
+    padding: 40px;
+}
+
+.section03 .cont p {
+    margin-left: 80px;
+}
+
+/* section04 */
+
+.section04 {
+    width: 100%;
+    margin-bottom: 120px;
+}
+
+.section04 .inner div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+.section04 .inner div p {
+    padding-right: 50px;
+    font-weight: bold;
+    color: #989696;
+}
+
+.section04 .inner div h2 {
+    width: 220px;
+}
+
+.section04 .inner .number {
+    font-size: 20pt;
+}
+
+/* section05 */
+
+.section05 {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.section05 .main-m {
+    display: flex;
+}
+
+.section05 .main-m li {
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+.section05 .main-m li>a:hover {
+    color: #e97b0c;
+}
+
+.section05 .main-m li a {
+    padding: 10px 0;
+}
+
+.section05 .main-m .first {
+    padding-left: 0;
+}
+
+.section05 .main-m li>a {
+    font-size: 20pt;
+
+}
+
+.section05 .sub-m a {
+    display: block;
+}
+
+.section05 .sub-m a:hover {
+    color: #d97e08;
+}
+
+.section05 .main-title .sub-m a {
+    padding-left: 3px;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    margin-top: 80px;
+    background-color: #d0cbc1;
+}
+
+footer .inner div {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+footer .inner div p a {
+    margin-right: 30px;
+}
+
+footer .inner div p a:hover {
+    color: #7f5b28;
+}
+
+.last {
+    color: #222;
+    padding-bottom: 50px;
+}

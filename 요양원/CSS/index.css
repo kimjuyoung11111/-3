@@ -1,0 +1,716 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.fix,
+.fix::before,
+.fix::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    color: #222;
+    background-color: #fdfaed;
+}
+
+#wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* header */
+
+header {
+    width: 100%;
+}
+
+header .m-top {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+header .line {
+    display: flex;
+}
+
+header .line span {
+    width: 25%;
+    height: 7px;
+    display: block;
+}
+
+header .line span:nth-child(1) {
+    background-color: #e74bcc;
+}
+
+header .line span:nth-child(2) {
+    background-color: #edd98c
+}
+
+header .line span:nth-child(3) {
+    background-color: #d8c57d;
+}
+
+header .line span:nth-child(4) {
+    background-color: #a2d6e9;
+}
+
+.manu {
+    display: flex;
+    justify-content: space-between;
+}
+
+header input {
+    display: none;
+}
+
+header h1 {
+    margin-top: 20px;
+    margin-left: 130px;
+}
+
+label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: 100px;
+    margin-right: 330px;
+    position: relative;
+
+}
+
+label span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #a6a19d;
+    position: absolute;
+
+}
+
+label span:nth-child(1) {
+    top: 0;
+}
+
+label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+label span:nth-child(3) {
+    bottom: 0;
+}
+
+/* header input:checked+label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+header input:checked+label span:nth-child(2) {
+    opacity: 0;
+}
+
+header input:checked+label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+} */
+
+/* 햄버거 버튼 메뉴 */
+
+header .main-maun-page {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    background-color: #fdfaed;
+    transition: all 0.8s;
+    /* 갑자기 등장하는 것이 아닌 왼쪽에서 부드럽게 나타나게 함 */
+}
+
+header .main-maun-page.on {
+    left: 0;
+}
+
+/* .main-maun-page가 나오게 만드는 방법
+해당클래스에 가상클래스 on파트를 만들어줘서 왼쪽으로
+ 보냈던 것을 다시 화면에 띄울려면 제이쿼리에서 만든 가상클래스 
+ on을 보여주려면 추가클래스인 addClass를 선택,
+엑스를 누르면 사라지게 만들려면 removeClass를 선택해야한다 */
+
+header .main-maun-page .line-btn {
+    display: flex;
+    position: fixed;
+    width: 80%;
+    padding-left: 620px;
+
+}
+
+header .main-maun-page .btn-x {
+    padding-top: 25px;
+    position: absolute;
+    top: 80px;
+    right: 320px;
+
+}
+
+/* header .main-maun-page .btn-x-left{ top: 50%;
+    transform: translateY(-50%) rotate(45deg);}
+
+header .main-maun-page .btn-x-right{  bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);} */
+
+header .line-btn span {
+    width: 25%;
+    height: 7px;
+    display: block;
+
+}
+
+header .line-btn span:nth-child(1) {
+    background-color: #e97b0c;
+}
+
+header .line-btn span:nth-child(2) {
+    background-color: #e6cb62;
+}
+
+header .line-btn span:nth-child(3) {
+    background-color: #5e4f45;
+}
+
+header .line-btn span:nth-child(4) {
+    background-color: #80c7e1;
+}
+
+header .menu {
+    width: 100%;
+    margin-top: 200px;
+}
+
+.main-m-top {
+    display: flex;
+    padding-bottom: 100px;
+}
+
+.main-m-top li {
+    padding-left: 100px;
+}
+
+.main-m-top li>a {
+    font-size: 27pt;
+    font-weight: bold;
+    padding: 20px 0;
+
+}
+
+.main-m-top li>a:hover {
+    color: #e97b0c;
+}
+
+.main-m-bot {
+    display: flex;
+}
+
+.main-m-bot .annot {
+    padding-left: 100px;
+}
+
+.main-m-bot .anot {
+    padding-left: 220px;
+}
+
+.main-m-bot .ant {
+    padding-left: 130px;
+}
+
+.main-m-bot li>a {
+    font-size: 27pt;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.main-m-bot li>a:hover {
+    color: #e97b0c;
+}
+
+header .sub-m {
+    margin-top: 30px;
+}
+
+header .sub-m a {
+    display: block;
+    font-size: 12pt;
+    padding: 10px 0;
+}
+
+header .sub-m a:hover {
+    color: #d97e08;
+}
+
+/* slide */
+
+.slide {
+    width: 100%;
+    height: 968px;
+    z-index: 10;
+}
+
+.slide a {
+    position: absolute;
+    animation: slider 10s infinite;
+    opacity: 0;
+}
+
+.slide a img {
+    width: 100%;
+}
+
+@keyframes slider {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 0.5초에 사진이 나오고, 5초간 유지한 뒤 0.5초에 사라진다 */
+
+.slide a:nth-child(1) {
+    animation-delay: 0;
+}
+
+.slide a:nth-child(2) {
+    animation-delay: 5s;
+}
+
+/* section01 */
+
+.section01 {
+    width: 100%;
+    text-align: center;
+}
+
+.section01 .star {
+    padding-bottom: 10px;
+    margin-top: 50px;
+}
+
+.section01 h2 {
+    font-size: 50pt;
+    margin-top: 10px;
+}
+
+.section01 img {
+    margin-top: 40px;
+}
+
+.section01 .content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.section01 .content img {
+    margin-top: 70px;
+    border-radius: 10%;
+
+}
+
+.content .left {}
+
+.content .Center {}
+
+.content .right {}
+
+.content h3 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.content .exp {
+    margin-bottom: 60px;
+}
+
+.content .exp02 {
+    margin-bottom: 50px;
+}
+
+.content .show {
+    border: 1px solid #222;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+}
+
+.content .show:hover {
+    background-color: #ece5be;
+    color: #626264;
+    border: none;
+}
+
+/* block 중앙정렬은 margin: 0 auto를 사용해야함! */
+
+/* section02 */
+
+.section02 {
+    width: 100%;
+    margin-top: 150px;
+
+}
+
+.set-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.set-box .cont2 {
+    width: 50%;
+    padding-left: 150px;
+    box-sizing: border-box;
+}
+
+.set-box .cont2 img {
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+.set-box .cont2 h2 {
+    font-size: 38pt;
+    margin-bottom: 20px;
+}
+
+.set-box .cont2 p {
+    margin-bottom: 30px;
+}
+
+.set-box .cont2 .show {
+    border: 1px solid #222;
+    width: 150px;
+    height: 70px;
+    padding-left: 60px;
+    line-height: 70px;
+}
+
+.set-box .cont2 .show:hover {
+    background-color: #ece5be;
+    color: #626264;
+    border: none;
+}
+
+.set-box .img-box {
+    width: 50%;
+    display: block;
+}
+
+.set-box .img-box img {
+    width: 100%;
+}
+
+/* section03 */
+
+.section03 {
+    width: 100%;
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    box-sizing: border-box;
+}
+
+.section03 .inner02 {
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.inner02 .btn {
+    padding-left: 1600px;
+    margin-bottom: 40px;
+}
+
+.cont3 {
+
+    display: flex;
+    align-items: center;
+}
+
+.left-box02 {
+    width: 30%;
+}
+
+.left-box02 h2 {
+    font-size: 43pt;
+}
+
+.left-box02 h3 {
+    font-size: 20pt;
+    padding-bottom: 10px;
+}
+
+.left-box02 .show {
+    border: 1px solid #222;
+    width: 150px;
+    height: 70px;
+    line-height: 70px;
+    margin-top: 20px;
+    padding-left: 25px;
+}
+
+.left-box02 .show:hover {
+    background-color: #ece5be;
+    color: #626264;
+    border: none;
+}
+
+.img-box02 {
+    display: flex;
+    width: 70%;
+}
+
+.img-box02 img {
+    padding-left: 50px;
+}
+
+/* section04 */
+
+.section04 {
+    width: 100%;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.left-box {
+    width: 50%;
+    display: flex;
+    background-color: #eec45e;
+    padding: 70px;
+}
+
+.right-box {
+    width: 50%;
+    display: flex;
+    background-color: #efba36;
+    padding: 70px;
+}
+
+.left-box .cont4 {
+    padding-left: 30px;
+}
+
+.cont4 h4 {
+    font-size: 20pt;
+    margin: 40px 0;
+}
+
+.cont4 p {
+    padding-bottom: 30px;
+}
+
+.section04 .cont4 .show a:hover {
+    color: #a45f14;
+}
+
+.right-box .cont4 {
+    padding-left: 30px;
+}
+
+.img-box03 img {
+    padding-left: 120px;
+}
+
+/* section05 */
+
+.section05 {
+    width: 100%;
+}
+
+.section05 .inner {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.icon01 {}
+
+.icon01 img {
+    margin-bottom: 30px;
+}
+
+.icon01 h3 {
+    margin-bottom: 50px;
+}
+
+.icon01 .show {
+    margin-bottom: 50px;
+    border: 1px solid #222;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.icon01 .show:hover {
+    background-color: #ece5be;
+    color: #626264;
+    border: none;
+}
+
+.icon02 {}
+
+.icon02 img {
+    margin-bottom: 30px;
+}
+
+.icon02 h3 {
+    margin-bottom: 50px;
+}
+
+.icon02 .show {
+    margin-bottom: 50px;
+    border: 1px solid #222;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.icon02 .show:hover {
+    background-color: #ece5be;
+    color: #626264;
+    border: none;
+}
+
+.icon03 {}
+
+.icon03 img {
+    margin-bottom: 30px;
+}
+
+.icon03 h3 {
+    margin-bottom: 50px;
+}
+
+.icon03 .show {
+    margin-bottom: 50px;
+    border: 1px solid #222;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.icon03 .show:hover {
+    background-color: #ece5be;
+    color: #626264;
+    border: none;
+}
+
+/* section06 */
+.section06 {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.section06 .main-m {
+    display: flex;
+}
+
+.section06 .main-m li {
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.section06 .main-m li>a:hover {
+    color: #e97b0c;
+}
+
+.section06 .main-m li a {
+    padding: 10px 0;
+}
+
+.section06 .main-m .first {
+    padding-left: 0;
+}
+
+.section06 .main-m li>a {
+    font-size: 22pt;
+
+}
+
+.section06 .sub-m a {
+    display: block;
+}
+
+.section06 .sub-m a:hover {
+    color: #d97e08;
+}
+
+.section06 .main-title .sub-m a {
+    padding-left: 3px;
+}
+
+/* footer */
+
+footer {
+    width: 100%;
+    margin-top: 120px;
+    background-color: #d0cbc1;
+    padding: 30px 0;
+}
+
+footer .top-box {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+
+}
+
+
+footer .top-box h1 {}
+
+footer .top-box p a {
+    padding-left: 20px;
+}
+
+footer .top-box p a:hover {
+    color: #7f5b28;
+}
+
+footer .bom-box {}
+
+footer .bom-box p {}
